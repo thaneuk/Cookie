@@ -6,11 +6,13 @@
 
     function parser(val) {
         var p;
+
         try {
             p = window.JSON.parse(val);
             val = typeof p === 'object' || p.toString() !== val ? p : val;
         } catch (e) {
         }
+
         return val;
     }
 
@@ -18,7 +20,6 @@
         try {
             val = window.JSON.stringify(val);
         } catch (e) {
-
         }
 
         return window.encodeURIComponent(val);
